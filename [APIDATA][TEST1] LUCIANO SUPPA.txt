@@ -1,0 +1,103 @@
+﻿<?php 
+
+//LUCIANO CARLOS SUPPA
+
+Examen - Buenas practicas de codificacion
+Duracion aprox. 30 min.
+
+Conceptos basicos
+Explicar que son los principios SOLID
+
+S – responsabilidad simple (Single responsibility)
+O – abierto/cerrado (Open/closed)
+L – sustitución de Liskov (Liskov substitution)
+I – segregación de la interfaz  (Interface segregation)
+D – inversión de la dependencia (Dependency inversion)
+
+PHPDocumentor
+Que son las anotaciones ?
+
+Son un fragmento corto de texto, generalmente una línea, que proporciona la función básica del elemento.
+Comienza con una barra diagonal y dos asteriscos (/**), y termina con un asterisco y una barra diagonal (*/).
+es muy útil cuando se trabaja con un elemento complejo.
+Las etiquetas son un tipo de información sobre el elemento asociado.
+Una etiqueta siempre comienza con (@) seguido del nombre de la etiqueta. 
+
+Explicar que representan estos terminos y dar un ejemplo de uso.
+@deprecated
+indica que el elemento está en desuso y se puede eliminar en la próxima versión.
+@author
+se escribe el nombre de quien realizo el codigo.
+@package
+asocia el elemento a un paquete.
+@see
+indica una referencia a otro elemento o un sitio web.
+@param
+toma un argumento de una función o un método.
+@return
+toma el valor de retorno de las funciones o métodos.
+@throws
+indica si el elemento podría lanzar una excepción.
+
+PSR4
+Cual de estos ejemplos de namespace es adecuado
+
+Developer\MyFirstPackage\Calculator XXXXXXXXXXXXXX
+
+developer\my_first_package\calc
+
+developer\myFirstPackage\Calc
+
+Cual nombre de clase es adecuado
+
+eCommerce
+ECommerce XXXXXXX
+E_Commerce
+E-Commerce
+
+Nombre de propiedad adecuado
+
+$_someName
+$SomeName
+$some_name
+$someName XXX
+
+Nombre de metodo adecuado
+
+getsomename()
+get_some_name()
+getSomeName() XXXXX
+get_SomeName()
+
+Composer
+Seleccionar la opcion correcta
+
+Composer es una aplicacion PHP
+Composer es un framework PHP
+Composer es un manejador de dependencias de PHP XXXXXXX
+
+Escribir los comandos para:
+inicializar un proyecto
+composer init
+buscar una libreria
+
+requerir una libreria
+cd nuevo-proyecto (siempre minuscula sin caracteres raros)
+actualizar el proyecto
+composer update
+eliminar una libreria
+composer remove
+
+Explicar brevemente que es el versionado semantico y como se compone
+
+Es un estándar a la hora de definir la versión del código, depende el cambio que hayas hecho.
+
+major = api (application programming interface, cambia la interface de la libreria)
+minor = features (no se arreglo nada, se le agrego algo mas)
+patch = fixes (arreglos, algun error)
+
+Proyecto
+Cuales son las 3 carpetas que deberian estar presentes en todo proyecto ?
+vendor - src - exepcion
+En que directorio colocarias todo aquello que no es PHP (js, css, html, sql, etc.) ?
+dentro de la carpeta del proyecto pero fuera del vendor, src 

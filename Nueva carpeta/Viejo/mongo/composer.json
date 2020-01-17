@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/mongo",
+    "require": {
+        "mongodb/mongodb": "^1.4"
+    }
+}

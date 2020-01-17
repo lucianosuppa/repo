@@ -1,0 +1,12 @@
+{
+    "name": "mixplay/plataforma",
+    "require": {
+        "nesbot/carbon": "^1.36"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "mixplay\\plataforma\\": "src/"
+        }
+}
+}

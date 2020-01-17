@@ -1,0 +1,426 @@
+wampserver
+Visual Studio
+comander
+chocolatey
+composer
+guzzle
+var_masterpiece
+json viewer
+
+Standard SR4
+
+vendor(nombre con el que me voy a identificar al mundo)\package\subpackage;
+
+Batman\Shop;
+
+
+PASOS PARA CREAR UNA LIBRERIA
+
+1- Crear directorio
+
+mkdir nuevo-proyecto
+
+2- Entrar al directorio
+
+cd nuevo-proyecto (siempre minuscula sin caracteres raros)
+
+3- inicializar composer y el repositorio
+
+git init
+
+3-b- crear una rama
+	git branch nombre-del-branch
+	git checkout nombre-del-branch
+	touch .gitignore
+	git checkout -b initialization
+
+composer init (te pide los datos de cantante/album/canciones)(vendor)
+
+composer update (trae las dependencias)
+
+touch index.php
+4- crear la carpeta src
+
+mkdir src (make dir) (siempre primero crear el esqueleto)
+
+5- configurar el autoload en el composer.json
+
+{
+	"autoload": {
+		"psr-4": {
+			"Batman\\Shop\\": "src\\"
+		       	 }
+		    }
+} 
+
+b) A partir de ahora todas las clases dentro "src" deben tener en la primera linea:
+
+<?php
+
+namespace Batman\Shop;
+
+class User {}
+
+
+6- Generar el mapa de clases
+
+composer dumpautoload -o 
+
+7- Ir al directorio src para escribir el codigo php
+
+cd src
+
+8- Creamos un archivo para ejecutar codigo de prueba 
+
+touch index.php
+
+b) para listar lo que hay en un directorio
+
+ls
+
+9- requerir el mapa de clases generado con composer
+
+<?php
+
+require '../vendor/autoload.php';
+
+10- 
+
+--------------------------------------------------------------------------------------------------------
+
+VERSIONADO SEMANTICO
+
+semver.org
+
+A.B.C
+
+10.6.3
+
+major = api (application programming interface, cambia la interface de la libreria)
+minor = features (no se arreglo nada, se le agrego algo mas)
+patch = fixes (arreglos, algun error)
+
+
+open/closed
+
+abiertas para la extension
+cerradas para la modificacion
+
+:: operador de resolucion de ambito
+
+cuando encapsulo propiedades se hacen metodos del objeto 
+
+Patrones de diseño 
+
+creacionales
+de comportamiento
+estructurales
+
+las constantes no son propiedades
+
+self (constante) : valor que tiengo siempre (esta en la clase)
+
+propiedades: valores del objeto
+
+instancia = new
+
+static es algo que pertenece a la clase y no a las instancias. es algo que solamente voy a acceder sin la instancia.  factory::getCalculator() no se puede usar $this. para referirme a una clase static me refiero con static. 
+no necesito hacer un new
+
+operador de situacion de ambito
+
+-> metodos de instancia
+:: metodos de clase
+
+metodo magico
+parent::__construct();
+
+invocando una constante de clase desde la clase
+self::REGULAR;
+
+invocando una constante de clase desde afuera de la clase
+CalculatorFactory::REGULAR;
+
+invocando una propiedad estatica desde la clase
+self::$COUNTER;
+
+invocando una propiedad estatica desde fuera de la clase
+calculatorFactory::$COUNTER;
+
+invocando un metodo estatico desde la clase
+self::getsomething();
+
+invocando un metodo estatico desde afuera de la clase
+SomeClass::getSomething();
+
+la interface es dar seguridad qie siempre usa los mismos parametros
+
+----------------------------------------------------------------------------------------
+
+thephpleague.com
+
+patron singletone - tutorialspoint.com
+
+abstract factory 
+
+fasar
+
+phalcon
+
+PlanInterface
+	getName()
+	getPeriod()
+	getPrice()
+
+	TrialPlan
+	PaidPlan
+	giftPlan
+
+SuscriberInterface
+	setEmail()
+	getEmail()
+	suscribe(PlanInterface $plan)
+	cancel()
+	getPlan(): PlanInterface
+
+suscriptionInterface
+	setSuscriber(SuscriberInterface $s)
+	setPlan (PlanInterface $s)
+	getCreatedDate()
+	getExpirationData()
+
+
+GIT (mantiene separado lo que es temporal(branch) y lo que es definitivo(master))
+clone (copia una carpeta existente)
+init (inicializa un arcivo)
+status (muestra el estado)
+add . (agrega todo)(lo que ya esta para salir final final)
+commit -m "create User class" (indica los cambios hechos)
+add src\user.php (agrega las modificaciones)
+add first.txt second.txt third.txt
+stash (empaqueta para que no molesten)
+checkout master (para moverte entre carpetas)
+branch (te crea la rama)
+branch -d nombre (la elimina)
+checkout -b otro-branch (te mueve de uno a otro branch)
+stash list (muestra los stash)
+strash apply 0 <- indice (vuelve al estado anteiror antes de hacer el stash)
+merge nombre (rama donde dejo plasmado los cambios definitivos)
+git commit --amend ()
+fetch (ver si hay cambios)
+pull (traer cambios)
+push (devolver cambios al remoto)
+remote -v (muestra de donde trae y donde escribe las cosas)
+git remote add origin www.com (asigna la url)
+git remote set-url origin www.com (cambia la url)
+
+
+composer create-project slim/slim-skeleton/api-rest
+
+php -S localhost:8888 -t public public/index.php
+
+
+
+----------------------------------------------------------------------------------
+
+slim
+
+HTTP
+
+GET (para pedir recurso o coleccion , el cliente pide , el servidor devuelve)
+POST (crear recursos, normalmente crea registros en base de datos)
+PATCH (una actualizacion de un recurso, cambie algo y quiero guardar ese cambio)
+PUT (tengo un objeto y quiero reemplazar, no quiero manter lo anterior)
+DELETE (eliminar un recurso)
+
+HEAD ()
+OPTIONS ()
+
+ENDPOINT (url)(tengo una url y dentro cada cosa tiene una url)
+
+GET / listings (te devuelve todo el listado) index()
+GET / listings / {listing} (te devuelve un articulo en particular) show()
+Post / listings (para subir un dato) create()
+PATCH / listings / {listing} (actualizo alguna informacion de este recurso) edit()
+PUT / listings / {listing} replace()
+DELETE / listings / {listing} delete()
+
+request es la solicitud
+
+
+inyeccion de dependencia (es cuando inicializas el objeto dandole lo que necesita para funcionar)(ahorrar la creacion de objetos)
+
+
+rest api tutorial.com
+
+400-3-9-4-22-29
+500-2-3
+300-1-2-8-7
+200-1-2-4-6
+
+mockaroo
+
+request leer solicitudes
+posponse escribir respuestas
+args dar parametros
+
+$c = new PlansController(); __construcs
+$c();  __invoke
+
+
+abstracciones
+
+CLIENTE | HTTP -> API REST -> PHP -> PDO (extension) -> BD
+
+
+PDO (conexiones, ejecutar operaciones)
+PDOStatement (preparar consultas)
+PDOException (extension de exception)
+
+
+C reated / insert / POST
+R ead / Select (condicional) / GET
+U pdate / update / PATCH - PUT
+D elete / delete / DELETE
+L ist / select (multiple) / GET
+
+php documentor docblock 
+
+frameworks
+autenticacion (login) 
+autortizacion (permisos)
+
+
+herramientas de desarrollo (debug, log, testing)
+templates (generadores de codigo html)
+
+
+M odelo (informacion que mis aplicaciones utilizan) 
+	datos (db, cache)
+	filesystem (leer, copiar, mover archivos / directorios)
+
+V ista
+	templates (generadores de codigo html)
+
+C ontrolador (listado de solicitud - entrega de lo solicitado)
+	routing
+	comunicacion HTTP(request, response)	
+	Validacion
+
+spl_autoload_register(function ($class_name)); con esto se hace el autoload sin el composer
+
+el constructor define una instancia de una clase
+
+los tipos de visibilidad son publica , privada o protegida.  la protegida es esa clase y los que heredan esa clase
+
+el parent invoca la clase padre, cuando invocas algo que no es tuyo. parent::$id (pasame el id)
+
+el polimorfismo es por ejemplo instrumento musical y vos te preguntas ¿cual?. esto es un .....
+instrumentos musicales
+	cuerda
+		guitarra
+	percusion
+		bombo
+	viento
+		trompeta
+
+
+operador de resolucion de ambito
+
+$this-> llamas a la propiedad de la clase. cuando tengo objetos y el valor pertenece a una instancia , un objeto particular  
+:: no esta en la instancia, esta en la clase. algo que esta en la clase por ejemplo una constante. el self indica la clase con su namespace completo
+
+
+las interfaces tiene la firma de varios metodos, lleva la funcionalidad. define los metodos que se van a aplicar en las clases 	que implementan la interfax
+
+
+una clase puede tener un constructor privado si solo ella lo va a usar. puede tener return solo devuelve la instancia por defecto, se espera que devuelva la instancia
+
+los principios SOLID, la s una clase, una funcion. o es abierta para la extencion , cerrada para la modificacion (final) 
+
+metodos magicos construct, invoke , to string. vienen predefinidos por php, son metodos que responden ante usos de objetos que no son habituales. 
+
+$u= new User;
+$u->getname(); __construc
+
+$controller = new controller;
+$controller(); __invoke
+
+$user= new User;
+$user->getname(); __toString
+
+echo $user;
+
+trait = aspecto / rasgo
+
+las clases se heredan
+interfaces se implementan
+trait se importan
+
+en un seter magico no tiene sentido devolver algo
+
+schema.com (para tomar ideas de como crear na clase)
+
+
+quiero hacer una clase usuario que me permita setear el email, contraseña y si el usuario quiere ser requerido.
+
+User
+	email
+	clave
+	recordarme en este equipo
+
+una session es mantener datos a lo largo de muchas solicitudes. 
+
+variables super globales (todos son arrays)
+$_POST,$_GET,$REQUEST,$FILES (tienen datos que vienen del usuario)
+$SESSION, datos que escribe el scrip para mantener informacion
+$SERVER () /(datos qie escribe php acerca de la comunicacion con el cliente
+$_SERVER['REMOTE_ADDR'] 
+
+print_r($_REQUEST): los datos de GET Y POST
+print_r($_GET): los datos de GET
+print_r($_POST): los datos de POST
+
+
+
+una clase que se va a encargar de manejar la variable post que solo va a ser de lectura. la clase se llamara request, tendra acceso a la variable post 
+
+si una variable es opcional tiene que tener una devolucion
+
+
+Validacion
+
+RESPONSABLE -> Validator
+RESPONSABILIDADES
+	validar (a cumple con las [reglas] de b)
+	
+	email
+		que no este vacio
+		que sea un string
+		que cumpla con el formato standar de email
+	password
+		que no este vacio
+		que sea un sring
+		que sea un password seguro
+		minimo de 8 caracteres
+		maximo de 12 caracteres
+
+una clase abstract es una clase que no se puede instanciar
+
+
+php documentor
+
+
+comentarios
+psr4
+composer
+clase
+miembros de clase
+instancia
+objetos 
+patrones de diseño
+como se agrupa 
+
+php por referencia
+pasaje de valores por parametros
+scope

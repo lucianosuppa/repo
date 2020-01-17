@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/framework",
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    }
+}

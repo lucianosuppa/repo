@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":210:{a:2:{s:7:"defects";a:1:{s:46:"RouterTest::testCreaCorrectamenteElControlador";i:4;}s:5:"times";a:2:{s:30:"RouterTest::testExisteAhorcado";d:0.008;s:46:"RouterTest::testCreaCorrectamenteElControlador";d:0.001;}}}

@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/docker",
+    "require": {
+        "php-amqplib/php-amqplib": "^2.9"
+    }
+}

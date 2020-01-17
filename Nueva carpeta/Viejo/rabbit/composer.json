@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/rabbit",
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/calculadora",
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    }
+}

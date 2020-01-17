@@ -1,0 +1,12 @@
+interface controller
+
+dami
+
+un archivo con los controller con get y post 
+
+que hagan cosas distintas
+
+probar todo 
+
+
+

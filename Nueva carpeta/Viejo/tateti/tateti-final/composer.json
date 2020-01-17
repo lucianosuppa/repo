@@ -1,0 +1,6 @@
+{
+    "name": "lsuppa/tateti-final",
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    }
+}
